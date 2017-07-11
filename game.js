@@ -1,96 +1,57 @@
 var game;
 var gameOptions = {
-    gameWidth: 500,
-    gameHeight: 500,
-    circleColors: [0xfe153a, 0x36dffa, 0xec9f10, 0x27f118],
-    circlePositions: [new Phaser.Point(-125, -125), new Phaser.Point(125, -125), new Phaser.Point(125, 125), new Phaser.Point(-125, 125)]
+    gameWidth: 750,
+    gameHeight: 1334,
+    circleColors: [0xff0099, 0xf3f315, 0x83f52c, 0x630dd0],
 }
-var SWIPEUP = 0;
-var SWIPEDOWN = 1;
-var SWIPELEFT = 2;
-var SWIPERIGHT = 3;
 window.onload = function() {
     game = new Phaser.Game(gameOptions.gameWidth, gameOptions.gameHeight);
-    game.state.add("PlayGame", playGame);
-    game.state.start("PlayGame");
+    game.state.add("GameTitle", gameTitle);
+    game.state.start("GameTitle");
 }
-var playGame = function(game){}
-playGame.prototype = {
+var gameTitle = function(game){}
+gameTitle.prototype = {
     preload: function(){
-        game.load.image("circle", "circle.png");
+        game.load.image("gametitle", "gametitle.png");
+        game.load.image("playbutton", "playbutton.png");
+        game.load.image("particle", "particle.png");
+        game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        game.scale.pageAlignHorizontally = true;
+        game.scale.pageAlignVertically = true;
+        game.stage.disableVisibilityChange = true;        
     },
     create: function(){
-        game.stage.backgroundColor = 0x444444;
-        this.circleGroup = game.add.group();
-        this.circleGroup.position.set(game.width / 2, game.height / 2);
-        this.circlesArray = [];
-        for(var i = 0; i < 4; i++){
-            var circle = game.add.sprite(gameOptions.circlePositions[i].x, gameOptions.circlePositions[i].y, "circle");
-            circle.anchor.set(0.5);
-            circle.tint = gameOptions.circleColors[i];
-            this.circlesArray.push(circle);
-            this.circleGroup.add(circle);
-        }
-        game.input.onTap.add(this.handleTap, this);
-        game.input.onDown.add(this.beginSwipe, this);
-    },
-    handleTap: function(pointer, doubleTap){
-        if(doubleTap){
-            var tweenRight = game.add.tween(this.circlesArray[0]).to({
-                x: this.circlesArray[0].x + 250 
-            }, 200, Phaser.Easing.Cubic.Out, true);
-            var tweenLeft = game.add.tween(this.circlesArray[1]).to({
-                x: this.circlesArray[1].x - 250 
-            }, 200, Phaser.Easing.Cubic.Out, true);
-            var tempSprite = this.circlesArray[0];
-            this.circlesArray[0] = this.circlesArray[1];
-            this.circlesArray[1] = tempSprite;
-        }
-    },
-    beginSwipe: function(e) {
-        game.input.onDown.remove(this.beginSwipe, this);
-        game.input.onUp.add(this.endSwipe, this);
-    },
-    endSwipe: function(e) {
-        game.input.onUp.remove(this.endSwipe, this);
-        var swipeTime = e.timeUp - e.timeDown;
-        var swipeDistance = Phaser.Point.subtract(e.position, e.positionDown);
-        var swipeMagnitude = swipeDistance.getMagnitude();
-        var swipeNormal = Phaser.Point.normalize(swipeDistance);
-        if(swipeMagnitude > 20 && swipeTime < 1000 && (Math.abs(swipeNormal.y) > 0.8 || Math.abs(swipeNormal.x) > 0.8)) {
-            if(swipeNormal.x > 0.8) {
-                this.handleSwipe(SWIPERIGHT, e.position);
-            }
-            if(swipeNormal.x < -0.8) {
-                this.handleSwipe(SWIPELEFT, e.position);
-            }
-            if(swipeNormal.y > 0.8) {
-                this.handleSwipe(SWIPEDOWN, e.position);
-            }
-            if(swipeNormal.y < -0.8) {
-                this.handleSwipe(SWIPEUP, e.position);
-            }
-        } else {
-            game.input.onDown.add(this.beginSwipe, this);
-        }
-    },
-    handleSwipe: function(dir, startPoint) {
-        var degrees = ((dir == SWIPERIGHT) || (dir == SWIPEUP && startPoint.x < game.width / 2) || (dir == SWIPEDOWN && startPoint.x > game.width / 2)) ? 90 : -90;
-        var rotateTween = game.add.tween(this.circleGroup).to({
-            angle: degrees 
-        }, 200, Phaser.Easing.Cubic.Out, true);
-        rotateTween.onComplete.add(function(){
-            if(degrees == 90){
-                Phaser.ArrayUtils.rotateRight(this.circlesArray);    
-            }
-            else{
-                Phaser.ArrayUtils.rotateLeft(this.circlesArray);             
-            }
-            this.circleGroup.angle = 0;
-            for(var i = 0; i < 4; i++){
-                this.circlesArray[i].position.set(gameOptions.circlePositions[i].x, gameOptions.circlePositions[i].y);
-            }                
+        var emitter = game.add.emitter(game.width / 2, 0, 100);
+        emitter.width = game.width;
+        emitter.makeParticles("particle");
+        emitter.minParticleScale = 0.1;
+        emitter.maxParticleScale = 0.2;
+        emitter.setYSpeed(150, 250);
+        emitter.setXSpeed(0, 0);
+        emitter.setAlpha(1, 1);
+        emitter.minRotation = 0;
+        emitter.maxRotation = 0;
+        emitter.start(false, 4000, 50, 0);
+        emitter.forEach(function(particle){
+            particle.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
+        });
+        this.titleBack = game.add.sprite(game.width / 2, 300, "gametitle");
+        this.titleBack.anchor.set(0.5);
+        this.titleBack.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
+        var title = game.add.sprite(game.width / 2, 300, "gametitle");
+        title.anchor.set(0.5);
+        title.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
+        this.buttonBack = game.add.sprite(game.width / 2, game.height / 2 + 200, "playbutton");
+        this.buttonBack.anchor.set(0.5);
+        this.buttonBack.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
+        var playButton = game.add.button(game.width / 2, game.height / 2 + 200, "playbutton", function(){
+            game.state.start("GameTitle");
         }, this);
-        game.input.onDown.add(this.beginSwipe, this);
+        playButton.anchor.set(0.5);
+        playButton.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
+    },
+    update: function(){
+        this.titleBack.position.set(game.width / 2 + game.rnd.integerInRange(-8, 8), 300 + game.rnd.integerInRange(-8, 8));
+        this.buttonBack.position.set(game.width / 2 + game.rnd.integerInRange(-8, 8), game.height / 2 + 200 + game.rnd.integerInRange(-8, 8));  
     }
 }
