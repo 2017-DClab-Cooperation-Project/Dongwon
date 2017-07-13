@@ -24,7 +24,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
      game.load.image('bg', 'assets/nanoha_taiken_blue.png'); 
  
  
-     game.load.spritesheet('button', 'assets/button-round.png', 80, 20); 
+     game.load.spritesheet('button', 'assets/button-round.png', 60, 60); 
      game.load.bitmapFont('nokia', 'assets/nokia16.png', 'assets/nokia16.xml'); 
  
  
@@ -63,14 +63,14 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
      fx.addMarker('soundscape', 20, 18.8); 
  	 
  	//	Make some buttons to trigger the sounds 
- 	makeButton('charm', 600, 100); 
- 	makeButton('curse', 600, 140); 
- 	makeButton('fireball', 600, 180); 
- 	makeButton('spell', 600, 220); 
-     makeButton('soundscape', 600, 260); 
+ 	makeButton('charm', 250, 100); 
+ 	makeButton('curse', 250, 250); 
+ 	makeButton('fireball', 250, 400); 
+ 	makeButton('spell', 450, 100); 
+    makeButton('soundscape', 450, 250); 
  
  
- 	makeButton('pause', 600, 380); 
+ 	makeButton('pause', 450, 400); 
  
  
  } 
@@ -82,10 +82,10 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
      var button = game.add.button(x, y, 'button', click, this, 0, 1, 2); 
      button.name = name; 
      button.scale.set(2, 1.5); 
-     button.smoothed = false; 
+     button.smoothed = true; 
  
  
-     var text = game.add.bitmapText(x, y + 7, 'nokia', name, 16); 
+     var text = game.add.bitmapText(x , y + 35, 'nokia', name, 16); 
      text.x += (button.width / 2) - (text.textWidth / 2); 
  
  
