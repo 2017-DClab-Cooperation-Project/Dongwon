@@ -30,16 +30,27 @@ function preload() {
     game.load.audio('paris_008', 'assets/The Chainsmokers - Paris/paris_008.wav');
     game.load.audio('paris_009', 'assets/The Chainsmokers - Paris/paris_009.wav');
     game.load.audio('paris_010', 'assets/The Chainsmokers - Paris/paris_010.wav');
+    game.load.audio('paris_011', 'assets/The Chainsmokers - Paris/paris_011.wav');
+    game.load.audio('paris_012', 'assets/The Chainsmokers - Paris/paris_012.wav');
+    game.load.audio('paris_013', 'assets/The Chainsmokers - Paris/paris_013.wav');
+    game.load.audio('paris_014', 'assets/The Chainsmokers - Paris/paris_014.wav');
+    game.load.audio('paris_015', 'assets/The Chainsmokers - Paris/paris_015.wav');
+    game.load.audio('paris_016', 'assets/The Chainsmokers - Paris/paris_016.wav');
+    game.load.audio('paris_017', 'assets/The Chainsmokers - Paris/paris_017.wav');
+    game.load.audio('paris_018', 'assets/The Chainsmokers - Paris/paris_018.wav');
+    game.load.audio('paris_019', 'assets/The Chainsmokers - Paris/paris_019.wav');
+    game.load.audio('paris_020', 'assets/The Chainsmokers - Paris/paris_020.wav');
+    game.load.audio('paris_021', 'assets/The Chainsmokers - Paris/paris_021.wav');
+    game.load.audio('paris_022', 'assets/The Chainsmokers - Paris/paris_022.wav');
    
 
 }
 
-var music;
 var button1,button2,button3,button4,button5,button6,button7,button8,button9;
 var background;
 
-var paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010;
-var sounds;
+var paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010,paris_011,paris_012,paris_013,paris_014,paris_015,paris_016,paris_017,paris_018,paris_019,paris_020,paris_021,paris_022;
+var phase1;
 
 function create() {
 
@@ -62,6 +73,18 @@ function create() {
     paris_008 = game.add.audio('paris_008');
     paris_009 = game.add.audio('paris_009');
     paris_010 = game.add.audio('paris_010');
+    paris_011 = game.add.audio('paris_011');
+    paris_012 = game.add.audio('paris_012');
+    paris_013 = game.add.audio('paris_013');
+    paris_014 = game.add.audio('paris_014');
+    paris_015 = game.add.audio('paris_015');
+    paris_016 = game.add.audio('paris_016');
+    paris_017 = game.add.audio('paris_017');
+    paris_018 = game.add.audio('paris_018');
+    paris_019 = game.add.audio('paris_019');
+    paris_020 = game.add.audio('paris_020');
+    paris_021 = game.add.audio('paris_021');
+    paris_022 = game.add.audio('paris_022');
 
     paris_002.addMarker('paris_002');
     paris_003.addMarker('paris_003');
@@ -72,27 +95,56 @@ function create() {
     paris_008.addMarker('paris_008');
     paris_009.addMarker('paris_009');
     paris_010.addMarker('paris_010');
+    paris_011.addMarker('paris_011');
+    paris_012.addMarker('paris_012');
+    paris_013.addMarker('paris_013');
+    paris_014.addMarker('paris_014');
+    paris_015.addMarker('paris_015');
+    paris_016.addMarker('paris_016');
+    paris_017.addMarker('paris_017');
+    paris_018.addMarker('paris_018');
+    paris_019.addMarker('paris_019');
+    paris_020.addMarker('paris_020');
+    paris_021.addMarker('paris_021');
+    paris_022.addMarker('paris_022');
 
-    makeButton('paris_002',game.world.centerX-100, game.world.centerY-100,paris_002);
-    makeButton('paris_003',game.world.centerX-100, game.world.centerY,paris_003);
-    makeButton('paris_004',game.world.centerX-100, game.world.centerY+100,paris_004);
-    makeButton('paris_005',game.world.centerX, game.world.centerY-100,paris_005);
-    makeButton('paris_006',game.world.centerX, game.world.centerY,paris_006);
-    makeButton('paris_007',game.world.centerX, game.world.centerY+100,paris_007);
-    makeButton('paris_008',game.world.centerX+100, game.world.centerY-100,paris_008);
-    makeButton('paris_009',game.world.centerX+100, game.world.centerY,paris_009);
-    makeButton('paris_010',game.world.centerX+100, game.world.centerY+100,paris_010);
+ phase1 = [paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010,paris_011,paris_012,paris_013,paris_014,paris_015,paris_016,paris_017,paris_018,paris_019,paris_020,paris_021,paris_022];
 
-    sounds = [paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010];
+    makeButton(game.world.centerX-70, game.world.centerY-70,phase1[0]);
+    makeButton(game.world.centerX-70, game.world.centerY,phase1[1]);
+    makeButton(game.world.centerX-70, game.world.centerY+70,phase1[2]);
+    makeButton(game.world.centerX, game.world.centerY-70,phase1[3]);
+    makeButton(game.world.centerX, game.world.centerY,phase1[4]);
+    makeButton(game.world.centerX, game.world.centerY+70,phase1[5]);
+    makeButton(game.world.centerX+70, game.world.centerY-70,phase1[6]);
+    makeButton(game.world.centerX+70, game.world.centerY,phase1[7]);
+    makeButton(game.world.centerX+70, game.world.centerY+70,phase1[8]);
+    makeButton(game.world.centerX-140, game.world.centerY-140,phase1[9]);
+    makeButton(game.world.centerX-140, game.world.centerY-70,phase1[10]);
+    makeButton(game.world.centerX-140, game.world.centerY,phase1[11]);
+    makeButton(game.world.centerX-140, game.world.centerY+70,phase1[12]);
+    makeButton(game.world.centerX-140, game.world.centerY+140,phase1[13]);
+    makeButton(game.world.centerX-70, game.world.centerY-140,phase1[14]);
+    makeButton(game.world.centerX-70, game.world.centerY+140,phase1[15]);
+    makeButton(game.world.centerX, game.world.centerY-140,phase1[16]);
+    makeButton(game.world.centerX, game.world.centerY+140,phase1[17]);
+    makeButton(game.world.centerX+70, game.world.centerY-140,phase1[18]);
+    makeButton(game.world.centerX+70, game.world.centerY+140,phase1[19]);
+    makeButton(game.world.centerX+140, game.world.centerY-140,phase1[20]);
+    makeButton(game.world.centerX+140, game.world.centerY-70,phase1[8]);
+    makeButton(game.world.centerX+140, game.world.centerY,phase1[8]);
+    makeButton(game.world.centerX+140, game.world.centerY+70,phase1[8]);
+    makeButton(game.world.centerX+140, game.world.centerY+140,phase1[8]);
+
 
 }
 
-function makeButton(name, x, y, sound) { 
+function makeButton(x, y, sound) { 
  
  
-     var button = game.add.button(x, y, 'button', function(){sound.play(button.name); }, this, 4, 3, 5); 
-     button.name = name; 
-     button.scale.set(1, 1); 
+     var button = game.add.button(x, y, 'button', function(){sound.play(); }, this, 4, 3, 5); 
+     button.anchor.setTo(0.5,0.5); 
+     button.scale.set(0.7, 0.7); 
      button.smoothed = true; 
  
  } 
