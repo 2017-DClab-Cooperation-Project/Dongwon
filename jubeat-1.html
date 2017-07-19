@@ -20,14 +20,26 @@ function preload() {
 
     game.load.spritesheet('button', 'assets/number-buttons-90x90.png', 90,90);
     game.load.image('background','assets/starfield.jpg');
-    game.load.audio('music1','assets/In_Motion.mp3');
-    game.load.image('logo', 'assets/phaser2.png');
+
+    game.load.audio('paris_002', 'assets/The Chainsmokers - Paris/paris_002.wav');
+    game.load.audio('paris_003', 'assets/The Chainsmokers - Paris/paris_003.wav');
+    game.load.audio('paris_004', 'assets/The Chainsmokers - Paris/paris_004.wav');
+    game.load.audio('paris_005', 'assets/The Chainsmokers - Paris/paris_005.wav');
+    game.load.audio('paris_006', 'assets/The Chainsmokers - Paris/paris_006.wav');
+    game.load.audio('paris_007', 'assets/The Chainsmokers - Paris/paris_007.wav');
+    game.load.audio('paris_008', 'assets/The Chainsmokers - Paris/paris_008.wav');
+    game.load.audio('paris_009', 'assets/The Chainsmokers - Paris/paris_009.wav');
+    game.load.audio('paris_010', 'assets/The Chainsmokers - Paris/paris_010.wav');
+   
 
 }
 
 var music;
 var button1,button2,button3,button4,button5,button6,button7,button8,button9;
 var background;
+
+var paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010;
+var sounds;
 
 function create() {
 
@@ -41,54 +53,47 @@ function create() {
     game.input.addPointer();
     game.input.addPointer();
 
-    // The numbers given in parameters are the indexes of the frames, in this order: over, out, down
-    button1 = game.add.button(game.world.centerX-100, game.world.centerY+100, 'button', actionOnClick, this, 4, 3, 5);
-    button2 = game.add.button(game.world.centerX, game.world.centerY+100, 'button', actionOnClick, this, 4, 3, 5);
-    button3 = game.add.button(game.world.centerX+100, game.world.centerY+100, 'button', actionOnClick, this, 4, 3, 5);
-    button4 = game.add.button(game.world.centerX-100, game.world.centerY, 'button', actionOnClick, this, 4, 3, 5);
-    button5 = game.add.button(game.world.centerX, game.world.centerY, 'button', actionOnClick, this, 4, 3, 5);
-    button6 = game.add.button(game.world.centerX+100, game.world.centerY, 'button', actionOnClick, this, 4, 3, 5);
-    button7 = game.add.button(game.world.centerX-100, game.world.centerY-100, 'button', actionOnClick, this, 4, 3, 5);
-    button8 = game.add.button(game.world.centerX, game.world.centerY-100, 'button', actionOnClick, this, 4, 3, 5);
-    button9 = game.add.button(game.world.centerX+100, game.world.centerY-100, 'button', actionOnClick, this, 4, 3, 5);
+    paris_002 = game.add.audio('paris_002');
+    paris_003 = game.add.audio('paris_003');
+    paris_004 = game.add.audio('paris_004');
+    paris_005 = game.add.audio('paris_005');
+    paris_006 = game.add.audio('paris_006');
+    paris_007 = game.add.audio('paris_007');
+    paris_008 = game.add.audio('paris_008');
+    paris_009 = game.add.audio('paris_009');
+    paris_010 = game.add.audio('paris_010');
 
+    paris_002.addMarker('paris_002');
+    paris_003.addMarker('paris_003');
+    paris_004.addMarker('paris_004');
+    paris_005.addMarker('paris_005');
+    paris_006.addMarker('paris_006');
+    paris_007.addMarker('paris_007');
+    paris_008.addMarker('paris_008');
+    paris_009.addMarker('paris_009');
+    paris_010.addMarker('paris_010');
 
-    //  setting the anchor to the center
-    button1.anchor.setTo(0.5, 0.5);
-    button2.anchor.setTo(0.5, 0.5);
-    button3.anchor.setTo(0.5, 0.5);
-    button4.anchor.setTo(0.5, 0.5);
-    button5.anchor.setTo(0.5, 0.5);
-    button6.anchor.setTo(0.5, 0.5);
-    button7.anchor.setTo(0.5, 0.5);
-    button8.anchor.setTo(0.5, 0.5);
-    button9.anchor.setTo(0.5, 0.5);
+    makeButton('paris_002',game.world.centerX-100, game.world.centerY-100,paris_002);
+    makeButton('paris_003',game.world.centerX-100, game.world.centerY,paris_003);
+    makeButton('paris_004',game.world.centerX-100, game.world.centerY+100,paris_004);
+    makeButton('paris_005',game.world.centerX, game.world.centerY-100,paris_005);
+    makeButton('paris_006',game.world.centerX, game.world.centerY,paris_006);
+    makeButton('paris_007',game.world.centerX, game.world.centerY+100,paris_007);
+    makeButton('paris_008',game.world.centerX+100, game.world.centerY-100,paris_008);
+    makeButton('paris_009',game.world.centerX+100, game.world.centerY,paris_009);
+    makeButton('paris_010',game.world.centerX+100, game.world.centerY+100,paris_010);
 
-    music = game.add.audio('music1');
-    music.play();
-
-    var sprite = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-    sprite.scale.x = 0.27; 
-    sprite.scale.y = 0.27; 
-    sprite.anchor.setTo(0.5, 0.5);
-    sprite.alpha = 0;
-
-    game.add.tween(sprite).to( { alpha: 1 }, 500, Phaser.Easing.Linear.None, true, 0, 500, true);
-}
-
-
-function actionOnClick() {
-    
-    //  Manually changing the frames of the button, i.e, how it will look when you play with it
-    button1.setFrames(4, 3, 5);
-    button2.setFrames(4, 3, 5);
-    button3.setFrames(4, 3, 5);
-    button4.setFrames(4, 3, 5);
-    button5.setFrames(4, 3, 5);
-    button6.setFrames(4, 3, 5);
-    button7.setFrames(4, 3, 5);
-    button8.setFrames(4, 3, 5);
-    button9.setFrames(4, 3, 5);
+    sounds = [paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010];
 
 }
+
+function makeButton(name, x, y, sound) { 
+ 
+ 
+     var button = game.add.button(x, y, 'button', function(){sound.play(button.name); }, this, 4, 3, 5); 
+     button.name = name; 
+     button.scale.set(1, 1); 
+     button.smoothed = true; 
+ 
+ } 
 
