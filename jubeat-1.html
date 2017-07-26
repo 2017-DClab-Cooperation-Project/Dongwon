@@ -42,15 +42,23 @@ function preload() {
     game.load.audio('paris_020', 'assets/The Chainsmokers - Paris/paris_020.wav');
     game.load.audio('paris_021', 'assets/The Chainsmokers - Paris/paris_021.wav');
     game.load.audio('paris_022', 'assets/The Chainsmokers - Paris/paris_022.wav');
+    game.load.audio('paris_030', 'assets/The Chainsmokers - Paris/paris_030.wav');
     game.load.audio('paris_031', 'assets/The Chainsmokers - Paris/paris_031.wav');
     game.load.audio('paris_032', 'assets/The Chainsmokers - Paris/paris_032.wav');
     game.load.audio('paris_033', 'assets/The Chainsmokers - Paris/paris_033.wav');
+    game.load.audio('paris_034', 'assets/The Chainsmokers - Paris/paris_034.wav');
+    game.load.audio('paris_035', 'assets/The Chainsmokers - Paris/paris_035.wav');
+    game.load.audio('paris_036', 'assets/The Chainsmokers - Paris/paris_036.wav');
+    game.load.audio('paris_037', 'assets/The Chainsmokers - Paris/paris_037.wav');
+    game.load.audio('paris_038', 'assets/The Chainsmokers - Paris/paris_038.wav');
+    game.load.audio('paris_039', 'assets/The Chainsmokers - Paris/paris_039.wav');
+    game.load.audio('paris_047', 'assets/The Chainsmokers - Paris/paris_047.wav');
 
 }
 
 var background;
 
-var paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010,paris_011,paris_012,paris_013,paris_014,paris_015,paris_016,paris_017,paris_018,paris_019,paris_020,paris_021,paris_022,paris_031,paris_032,paris_033;
+var paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010,paris_011,paris_012,paris_013,paris_014,paris_015,paris_016,paris_017,paris_018,paris_019,paris_020,paris_021,paris_022,paris_030,paris_031,paris_032,paris_033,paris_034,paris_035,paris_036,paris_037,paris_038,paris_039;,paris_047;
 var phase1;
 var phase2;
 var phase_mode=1;
@@ -88,6 +96,7 @@ function create() {
     paris_020 = game.add.audio('paris_020');
     paris_021 = game.add.audio('paris_021');
     paris_022 = game.add.audio('paris_022');
+    paris_030 = game.add.audio('paris_030');
     paris_031 = game.add.audio('paris_031');
     paris_032 = game.add.audio('paris_032');
     paris_033 = game.add.audio('paris_033');
@@ -113,11 +122,12 @@ function create() {
     paris_020.addMarker('paris_020');
     paris_021.addMarker('paris_021');
     paris_022.addMarker('paris_022');
+    paris_030.addMarker('paris_030');
     paris_031.addMarker('paris_031');
     paris_032.addMarker('paris_032');
     paris_033.addMarker('paris_033');
 
- phase1 = [paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010,paris_011,paris_012,paris_013,paris_014,paris_015,paris_016,paris_017,paris_018,paris_019,paris_020,paris_021,paris_022,paris_031];
+ phase1 = [paris_002,paris_003,paris_004,paris_005,paris_006,paris_007,paris_008,paris_009,paris_010,paris_011,paris_012,paris_013,paris_014,paris_015,paris_016,paris_017,paris_018,paris_019,paris_020,paris_021,paris_022,paris_030,paris_031];
 
  phase2 = [paris_032,paris_033];
 
@@ -175,8 +185,8 @@ function create() {
     makeButton(game.world.centerX-70, game.world.centerY+210,phase1[15]);
     makeButton(game.world.centerX, game.world.centerY+210,phase1[17]);
     makeButton(game.world.centerX+70, game.world.centerY+210,phase1[15]); 
-    makeButton(game.world.centerX+140, game.world.centerY+210,phase1[17]);
-    makeButton(game.world.centerX+210, game.world.centerY+210,phase1[21]);
+    makeButton(game.world.centerX+140, game.world.centerY+210,phase1[21]);
+    makeButton(game.world.centerX+210, game.world.centerY+210,phase1[22]);
 
 
     makePhaseButton(game.world.centerX+330, game.world.centerY-210,1);
