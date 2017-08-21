@@ -18,6 +18,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 
 function preload() {
 
+    game.load.spritesheet('sprite-button', 'assets/sprite-buttons.png.png', 90,90);
     game.load.spritesheet('button', 'assets/number-buttons-90x90.png', 90,90);
     game.load.image('background','assets/starfield.jpg');
 
@@ -356,6 +357,7 @@ function create() {
  phase5 = [paris_094,paris_095,paris_096,paris_097,paris_098,paris_099,paris_100,paris_101,paris_102,paris_103,paris_104,paris_105,paris_106,paris_107,paris_108,paris_109,paris_114,paris_115,paris_116];
 
 var button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,button21,button22,button23,button24,button25,button26,button27,button28,button29,button30,button30,button31,button32,button33,button34,button35,button36,button37,button38,button39,button40,button41,button42,button43,button44,button45,button46,button47,button48,button49;
+
 //row1
     button1 = makeButton('button1',game.world.centerX-210, game.world.centerY-210,phase1[0],paris_001,paris_001,paris_001);
     button2 = makeButton('button2',game.world.centerX-140, game.world.centerY-210,phase1[1],paris_001,phase3[29],paris_001);
@@ -425,7 +427,7 @@ var button1,button2,button3,button4,button5,button6,button7,button8,button9,butt
 
 function makeButton(name, x, y, sound1, sound2, sound3, sound4, sound5) { 
  
-     var button = game.add.button(x, y, 'button', function(){ if(phase_mode==1)sound1.play(); else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 3, 3, 3); 
+     var button = game.add.button(x, y, 'button', function(){ if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 3, 3, 3); 
      button.name = name;
      button.anchor.setTo(0.5,0.5); 
      button.scale.set(0.7, 0.7); 
