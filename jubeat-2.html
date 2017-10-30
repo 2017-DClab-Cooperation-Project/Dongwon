@@ -22,7 +22,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-    game.load.spritesheet('item', 'assets/128x128.png', 90, 90);
+    game.load.spritesheet('item', 'assets/number-buttons.png', 160, 160);
 }
 
 var simon;
@@ -43,7 +43,7 @@ function create() {
     simon = game.add.group();
     var item;
 
-    for (var i = 0; i < 8; i++)
+    for (var i = 0; i < 3; i++)
     {
         item = simon.create(150 + 168 * i, 150, 'item', i);
         // Enable input.
@@ -55,18 +55,17 @@ function create() {
         simon.getAt(i).alpha = 0;
     }
 
-    for (var i = 0; i < 8; i++)
+    for (var i = 0; i < 3; i++)
     {
-        item = simon.create(150 + 168 * i, 318, 'item', i + 8);
+        item = simon.create(150 + 168 * i, 318, 'item', i + 3);
         // Enable input.
         item.inputEnabled = true;
         item.input.start(0, true);
         item.events.onInputDown.add(select);
         item.events.onInputUp.add(release);
         item.events.onInputOut.add(moveOff);
-        simon.getAt(i + 8).alpha = 0;
+        simon.getAt(i + 3).alpha = 0;
     }
-
 
     introTween();
     setUp();
