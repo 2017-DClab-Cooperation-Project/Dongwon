@@ -364,7 +364,7 @@ var button1,button2,button3,button4,button5,button6,button7,button8,button9,butt
     button3 = makeButton0('button3',game.world.centerX-70, game.world.centerY-210,phase1[2],paris_001,phase3[30],paris_001);
     button4 = makeButton0('button4',game.world.centerX, game.world.centerY-210,phase1[3],paris_001,paris_001,paris_001);
     button5 = makeButton0('button5',game.world.centerX+70, game.world.centerY-210,phase1[14],paris_001,phase3[2],paris_001,phase5[2]);
-    button6 =  makeButton0('button6',game.world.centerX+140, game.world.centerY-210,phase1[16],paris_001,phase3[1],paris_001,phase5[1]);
+    button6 = makeButton0('button6',game.world.centerX+140, game.world.centerY-210,phase1[16],paris_001,phase3[1],paris_001,phase5[1]);
     button7 = makeButton0('button7',game.world.centerX+210, game.world.centerY-210,phase1[18],paris_001,phase3[0],paris_001,phase5[0]); 
 //row2
     button8 = makeButton1('button8',game.world.centerX-210, game.world.centerY-140,phase1[4],paris_001,phase3[28],paris_001);
@@ -443,7 +443,8 @@ function makeButton0(name, x, y, sound1, sound2, sound3, sound4, sound5) {
 
  function makeButton1(name, x, y, sound1, sound2, sound3, sound4, sound5) { 
  
-     var button = game.add.button(x, y, 'button', function(){  button.alpha=1;if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 1, 1, 1); 
+     var button = game.add.button(x, y, 'button', function(){  button.alpha=1;
+        if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 1, 1, 1); 
      button.name = name;
      button.anchor.setTo(0.5,0.5); 
      button.scale.set(0.7, 0.7); 
