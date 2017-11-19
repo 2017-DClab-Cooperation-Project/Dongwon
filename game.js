@@ -1,11 +1,11 @@
 
 var phase_mode=1;
 
+
 var Game = {
 
 preload : function() {
 
-    game.load.spritesheet('sprite-button', './assets/sprite-buttons.png.png', 90,90);
     game.load.spritesheet('button', './assets/number-buttons-90x90.png', 90,90);
     game.load.image('background','./assets/starfield.jpg');
 
@@ -122,7 +122,7 @@ var phase3;
 var phase4;
 var phase5;
     //  Setting the background colour
-    game.add.tileSprite(0, 0, 800, 600, 'background');
+    game.add.tileSprite(0, 0, 1200, 1000, 'background');
     game.stage.backgroundColor = '#182d3b';
     //game.input.touch.preventDefault = false;
 
@@ -343,129 +343,125 @@ var phase5;
 
 var button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,button21,button22,button23,button24,button25,button26,button27,button28,button29,button30,button30,button31,button32,button33,button34,button35,button36,button37,button38,button39,button40,button41,button42,button43,button44,button45,button46,button47,button48,button49;
 
+
 //row1
-    button1 = makeButton0('button1',game.world.centerX-210, game.world.centerY-210,phase1[0],paris_001,paris_001,paris_001);
-    button2 = makeButton0('button2',game.world.centerX-140, game.world.centerY-210,phase1[1],paris_001,phase3[29],paris_001);
-    button3 = makeButton0('button3',game.world.centerX-70, game.world.centerY-210,phase1[2],paris_001,phase3[30],paris_001);
-    button4 = makeButton0('button4',game.world.centerX, game.world.centerY-210,phase1[3],paris_001,paris_001,paris_001);
-    button5 = makeButton0('button5',game.world.centerX+70, game.world.centerY-210,phase1[14],paris_001,phase3[2],paris_001,phase5[2]);
-    button6 = makeButton0('button6',game.world.centerX+140, game.world.centerY-210,phase1[16],paris_001,phase3[1],paris_001,phase5[1]);
-    button7 = makeButton0('button7',game.world.centerX+210, game.world.centerY-210,phase1[18],paris_001,phase3[0],paris_001,phase5[0]); 
+    button1 = makeButton0('button1',game.world.centerX-300, game.world.centerY-300,phase1[0],paris_001,paris_001,paris_001);
+    button2 = makeButton0('button2',game.world.centerX-200, game.world.centerY-300,phase1[1],paris_001,phase3[29],paris_001);
+    button3 = makeButton0('button3',game.world.centerX-100, game.world.centerY-300,phase1[2],paris_001,phase3[30],paris_001);
+    button4 = makeButton0('button4',game.world.centerX, game.world.centerY-300,phase1[3],paris_001,paris_001,paris_001);
+    button5 = makeButton0('button5',game.world.centerX+100, game.world.centerY-300,phase1[14],paris_001,phase3[2],paris_001,phase5[2]);
+    button6 = makeButton0('button6',game.world.centerX+200, game.world.centerY-300,phase1[16],paris_001,phase3[1],paris_001,phase5[1]);
+    button7 = makeButton0('button7',game.world.centerX+300, game.world.centerY-300,phase1[18],paris_001,phase3[0],paris_001,phase5[0]); 
 //row2
-    button8 = makeButton1('button8',game.world.centerX-210, game.world.centerY-140,phase1[4],paris_001,phase3[28],paris_001);
-    button9 = makeButton1('button9',game.world.centerX-140, game.world.centerY-140,phase1[5],phase2[0],phase3[27],phase4[2]);
-    button10 = makeButton1('button10',game.world.centerX-70, game.world.centerY-140,phase1[6],paris_001,phase3[26],paris_001);
-    button11 = makeButton1('button11',game.world.centerX, game.world.centerY-140,phase1[7],paris_001,phase3[25],paris_001);
-    button12 = makeButton1('button12',game.world.centerX+70, game.world.centerY-140,phase1[18],paris_001,phase3[7],paris_001);
-    button13 = makeButton1('button13',game.world.centerX+140, game.world.centerY-140,phase1[20],phase2[1],phase3[8],phase4[0]);
-    button14 = makeButton1('button14',game.world.centerX+210, game.world.centerY-140,phase1[19],paris_001,paris_001,paris_001,phase5[3]);
+    button8 = makeButton1('button8',game.world.centerX-300, game.world.centerY-200,phase1[4],paris_001,phase3[28],paris_001);
+    button9 = makeButton1('button9',game.world.centerX-200, game.world.centerY-200,phase1[5],phase2[0],phase3[27],phase4[2]);
+    button10 = makeButton1('button10',game.world.centerX-100, game.world.centerY-200,phase1[6],paris_001,phase3[26],paris_001);
+    button11 = makeButton1('button11',game.world.centerX, game.world.centerY-200,phase1[7],paris_001,phase3[25],paris_001);
+    button12 = makeButton1('button12',game.world.centerX+100, game.world.centerY-200,phase1[18],paris_001,phase3[7],paris_001);
+    button13 = makeButton1('button13',game.world.centerX+200, game.world.centerY-200,phase1[20],phase2[1],phase3[8],phase4[0]);
+    button14 = makeButton1('button14',game.world.centerX+300, game.world.centerY-200,phase1[19],paris_001,paris_001,paris_001,phase5[3]);
 //row3
-    button15 = makeButton2('button15',game.world.centerX-210, game.world.centerY-70,phase1[8],paris_001,paris_001,paris_001);
-    button16 = makeButton2('button16',game.world.centerX-140, game.world.centerY-70,phase1[9],phase2[2],paris_001,paris_001);
-    button17 = makeButton2('button17',game.world.centerX-70, game.world.centerY-70,phase1[10],paris_001,paris_001,phase4[6]);
-    button18 = makeButton2('button18',game.world.centerX, game.world.centerY-70,phase1[11],paris_001,phase3[6],paris_001);
-    button19 = makeButton2('button19',game.world.centerX+70, game.world.centerY-70,phase1[13],paris_001,phase3[5],phase4[4],phase5[6]);
-    button20 = makeButton2('button20',game.world.centerX+140, game.world.centerY-70,phase1[8],phase2[3],phase3[4],phase4[13],phase5[5]);
-    button21 = makeButton2('button21',game.world.centerX+210, game.world.centerY-70,phase1[20],paris_001,phase3[3],phase4[10],phase5[4]);
+    button15 = makeButton2('button15',game.world.centerX-300, game.world.centerY-100,phase1[8],paris_001,paris_001,paris_001);
+    button16 = makeButton2('button16',game.world.centerX-200, game.world.centerY-100,phase1[9],phase2[2],paris_001,paris_001);
+    button17 = makeButton2('button17',game.world.centerX-100, game.world.centerY-100,phase1[10],paris_001,paris_001,phase4[6]);
+    button18 = makeButton2('button18',game.world.centerX, game.world.centerY-100,phase1[11],paris_001,phase3[6],paris_001);
+    button19 = makeButton2('button19',game.world.centerX+100, game.world.centerY-100,phase1[13],paris_001,phase3[5],phase4[4],phase5[6]);
+    button20 = makeButton2('button20',game.world.centerX+200, game.world.centerY-100,phase1[8],phase2[3],phase3[4],phase4[13],phase5[5]);
+    button21 = makeButton2('button21',game.world.centerX+300, game.world.centerY-100,phase1[20],paris_001,phase3[3],phase4[10],phase5[4]);
 //row4
-    button22 = makeButton3('button22',game.world.centerX-210, game.world.centerY,phase1[8],paris_001,paris_001,paris_001);
-    button23 = makeButton3('button23',game.world.centerX-140, game.world.centerY,phase1[11],phase2[4],paris_001,paris_001);
-    button24 = makeButton3('button24',game.world.centerX-70, game.world.centerY,phase1[1],paris_001,paris_001,paris_001);
+    button22 = makeButton3('button22',game.world.centerX-300, game.world.centerY,phase1[8],paris_001,paris_001,paris_001);
+    button23 = makeButton3('button23',game.world.centerX-200, game.world.centerY,phase1[11],phase2[4],paris_001,paris_001);
+    button24 = makeButton3('button24',game.world.centerX-100, game.world.centerY,phase1[1],paris_001,paris_001,paris_001);
     button25 = makeButton3('button25',game.world.centerX, game.world.centerY,phase1[12],paris_001,phase3[10],phase4[14]);
-    button26 = makeButton3('button26',game.world.centerX+70, game.world.centerY,phase1[15],paris_001,phase3[12],paris_001);
-    button27 = makeButton3('button27',game.world.centerX+140, game.world.centerY,phase1[17],phase2[5],phase3[11],phase4[12]);
-    button28 = makeButton3('button28',game.world.centerX+210, game.world.centerY,phase1[8],paris_001,phase3[9],phase4[9],phase5[7]); 
+    button26 = makeButton3('button26',game.world.centerX+100, game.world.centerY,phase1[15],paris_001,phase3[12],paris_001);
+    button27 = makeButton3('button27',game.world.centerX+200, game.world.centerY,phase1[17],phase2[5],phase3[11],phase4[12]);
+    button28 = makeButton3('button28',game.world.centerX+300, game.world.centerY,phase1[8],paris_001,phase3[9],phase4[9],phase5[7]); 
 //row5
-    button29 = makeButton2('button29',game.world.centerX-210, game.world.centerY+70,phase1[9],paris_001,paris_001,paris_001,phase5[14]);
-    button30 = makeButton2('button30',game.world.centerX-140, game.world.centerY+70,phase1[12],phase2[6],paris_001,paris_001,phase5[13]);
-    button31 = makeButton2('button31',game.world.centerX-70, game.world.centerY+70,phase1[2],paris_001,paris_001,phase4[5],phase5[12]);
-    button32 = makeButton2('button32',game.world.centerX, game.world.centerY+70,phase1[14],paris_001,phase3[14],paris_001);
-    button33 = makeButton2('button33',game.world.centerX+70, game.world.centerY+70,phase1[16],paris_001,phase3[16],phase4[7],phase5[10]); 
-    button34 = makeButton2('button34',game.world.centerX+140, game.world.centerY+70,phase1[19],phase2[7],phase3[15],phase4[11],phase5[9]);
-    button35 = makeButton2('button35',game.world.centerX+210, game.world.centerY+70,phase1[8],paris_001,phase3[13],phase4[8],phase5[8]);
+    button29 = makeButton2('button29',game.world.centerX-300, game.world.centerY+100,phase1[9],paris_001,paris_001,paris_001,phase5[14]);
+    button30 = makeButton2('button30',game.world.centerX-200, game.world.centerY+100,phase1[12],phase2[6],paris_001,paris_001,phase5[13]);
+    button31 = makeButton2('button31',game.world.centerX-100, game.world.centerY+100,phase1[2],paris_001,paris_001,phase4[5],phase5[12]);
+    button32 = makeButton2('button32',game.world.centerX, game.world.centerY+100,phase1[14],paris_001,phase3[14],paris_001);
+    button33 = makeButton2('button33',game.world.centerX+100, game.world.centerY+100,phase1[16],paris_001,phase3[16],phase4[7],phase5[10]); 
+    button34 = makeButton2('button34',game.world.centerX+200, game.world.centerY+100,phase1[19],phase2[7],phase3[15],phase4[11],phase5[9]);
+    button35 = makeButton2('button35',game.world.centerX+300, game.world.centerY+100,phase1[8],paris_001,phase3[13],phase4[8],phase5[8]);
 //row6   
-    button36 = makeButton1('button36',game.world.centerX-210, game.world.centerY+140,phase1[10],paris_001,paris_001,paris_001);
-    button37 = makeButton1('button37',game.world.centerX-140, game.world.centerY+140,phase1[13],paris_001,paris_001,phase4[1]);
-    button38 = makeButton1('button38',game.world.centerX-70, game.world.centerY+140,phase1[15],paris_001,paris_001,paris_001,phase5[15]);
-    button39 = makeButton1('button39',game.world.centerX, game.world.centerY+140,phase1[17],paris_001,phase3[18],paris_001);
-    button40 = makeButton1('button40',game.world.centerX+70, game.world.centerY+140,phase1[18],paris_001,phase3[20],paris_001);
-    button41 = makeButton1('button41',game.world.centerX+140, game.world.centerY+140,phase1[19],phase2[8],phase3[19],phase4[3]); 
-    button42 = makeButton1('button42',game.world.centerX+210, game.world.centerY+140,phase1[20],paris_001,phase3[17],paris_001,phase5[11]);
+    button36 = makeButton1('button36',game.world.centerX-300, game.world.centerY+200,phase1[10],paris_001,paris_001,paris_001);
+    button37 = makeButton1('button37',game.world.centerX-200, game.world.centerY+200,phase1[13],paris_001,paris_001,phase4[1]);
+    button38 = makeButton1('button38',game.world.centerX-100, game.world.centerY+200,phase1[15],paris_001,paris_001,paris_001,phase5[15]);
+    button39 = makeButton1('button39',game.world.centerX, game.world.centerY+200,phase1[17],paris_001,phase3[18],paris_001);
+    button40 = makeButton1('button40',game.world.centerX+100, game.world.centerY+200,phase1[18],paris_001,phase3[20],paris_001);
+    button41 = makeButton1('button41',game.world.centerX+200, game.world.centerY+200,phase1[19],phase2[8],phase3[19],phase4[3]); 
+    button42 = makeButton1('button42',game.world.centerX+300, game.world.centerY+200,phase1[20],paris_001,phase3[17],paris_001,phase5[11]);
 //row7
-    button43 = makeButton0('button43',game.world.centerX-210, game.world.centerY+210,phase1[11],paris_001,paris_001,beat);
-    button44 = makeButton0('button44',game.world.centerX-140, game.world.centerY+210,phase1[13],paris_001,paris_001,paris_001);
-    button45 = makeButton0('button45',game.world.centerX-70, game.world.centerY+210,phase1[15],paris_001,paris_001,paris_001);
-    button46 = makeButton0('button46',game.world.centerX, game.world.centerY+210,phase1[17],paris_001,phase3[22],paris_001);
-    button47 = makeButton0('button47',game.world.centerX+70, game.world.centerY+210,phase1[15],paris_001,phase3[24],paris_001,phase5[18]); 
-    button48 = makeButton0('button48',game.world.centerX+140, game.world.centerY+210,phase1[21],paris_001,phase3[23],paris_001,phase5[17]);
-    button49 = makeButton0('button49',game.world.centerX+210, game.world.centerY+210,phase1[22],paris_001,phase3[21],paris_001,phase5[16]);
+    button43 = makeButton0('button43',game.world.centerX-300, game.world.centerY+300,phase1[11],paris_001,paris_001,beat);
+    button44 = makeButton0('button44',game.world.centerX-200, game.world.centerY+300,phase1[13],paris_001,paris_001,paris_001);
+    button45 = makeButton0('button45',game.world.centerX-100, game.world.centerY+300,phase1[15],paris_001,paris_001,paris_001);
+    button46 = makeButton0('button46',game.world.centerX, game.world.centerY+300,phase1[17],paris_001,phase3[22],paris_001);
+    button47 = makeButton0('button47',game.world.centerX+100, game.world.centerY+300,phase1[15],paris_001,phase3[24],paris_001,phase5[18]); 
+    button48 = makeButton0('button48',game.world.centerX+200, game.world.centerY+300,phase1[21],paris_001,phase3[23],paris_001,phase5[17]);
+    button49 = makeButton0('button49',game.world.centerX+300, game.world.centerY+300,phase1[22],paris_001,phase3[21],paris_001,phase5[16]);
 
-    makePhaseButton(game.world.centerX+330, game.world.centerY-210,1);
-    makePhaseButton(game.world.centerX+330, game.world.centerY-140,2);
-    makePhaseButton(game.world.centerX+330, game.world.centerY-70,3);
-    makePhaseButton(game.world.centerX+330, game.world.centerY,4);
-    makePhaseButton(game.world.centerX+330, game.world.centerY+70,5);
-    makePhaseButton(game.world.centerX+330, game.world.centerY+140,6);
-    makePhaseButton(game.world.centerX+330, game.world.centerY+210,7);
-
-    var sprite_button = game.add.sprite(game.world.centerX-210, game.world.centerY-210, 'sprite-button'); 
-    sprite_button.anchor.setTo(0.5,0.5); 
-    sprite_button.scale.set(0.7, 0.7); 
-    sprite_button.smoothed = true; 
- 
+    makePhaseButton(game.world.centerX+420, game.world.centerY-300,1);
+    makePhaseButton(game.world.centerX+420, game.world.centerY-200,2);
+    makePhaseButton(game.world.centerX+420, game.world.centerY-100,3);
+    makePhaseButton(game.world.centerX+420, game.world.centerY,4);
+    makePhaseButton(game.world.centerX+420, game.world.centerY+100,5);
+    makePhaseButton(game.world.centerX+420, game.world.centerY+200,6);
+    makePhaseButton(game.world.centerX+420, game.world.centerY+300,7);
 }
 
 };
 
 function makeButton0(name, x, y, sound1, sound2, sound3, sound4, sound5) { 
-     var button = game.add.button(x, y, 'button', function(){ button.alpha=1; if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 0, 0, 0); 
+     var button = game.add.button(x-50, y, 'button', function(){ button.alpha=1; game.time.events.add(Phaser.Timer.SECOND*0.5,function(){button.alpha=0.6;},this); if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 0, 0, 0); 
      button.name = name;
      button.anchor.setTo(0.5,0.5); 
-     button.scale.set(0.7, 0.7); 
+     button.scale.set(1, 1); 
      button.smoothed = true; 
-     button.alpha = 0.6;
+     button.alpha = 0.65;
  
  } 
 
  function makeButton1(name, x, y, sound1, sound2, sound3, sound4, sound5) { 
  
-     var button = game.add.button(x, y, 'button', function(){  button.alpha=1;
+     var button = game.add.button(x-50, y, 'button', function(){  button.alpha=1; game.time.events.add(Phaser.Timer.SECOND*0.5,function(){button.alpha=0.6;},this);
         if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 1, 1, 1); 
      button.name = name;
      button.anchor.setTo(0.5,0.5); 
-     button.scale.set(0.7, 0.7); 
+     button.scale.set(1, 1); 
      button.smoothed = true; 
-     button.alpha = 0.6;
+     button.alpha = 0.65;
  
  } 
  
 function makeButton2(name, x, y, sound1, sound2, sound3, sound4, sound5) { 
  
-     var button = game.add.button(x, y, 'button', function(){ button.alpha=1; if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 2, 2, 2); 
+     var button = game.add.button(x-50, y, 'button', function(){ button.alpha=1; game.time.events.add(Phaser.Timer.SECOND*0.5,function(){button.alpha=0.6;},this); if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 2, 2, 2); 
      button.name = name;
      button.anchor.setTo(0.5,0.5); 
-     button.scale.set(0.7, 0.7); 
+     button.scale.set(1, 1); 
      button.smoothed = true; 
-     button.alpha = 0.6;
+     button.alpha = 0.65;
  
  }
 
 function makeButton3(name, x, y, sound1, sound2, sound3, sound4, sound5) { 
  
-     var button = game.add.button(x, y, 'button', function(){  button.alpha=1;if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 3, 3, 3); 
+     var button = game.add.button(x-50, y, 'button', function(){  button.alpha=1; game.time.events.add(Phaser.Timer.SECOND*0.5,function(){button.alpha=0.6;},this); if(phase_mode==1){sound1.play();} else if(phase_mode==2)sound2.play(); else if(phase_mode==3)sound3.play(); else if(phase_mode==4)sound4.play(); else if(phase_mode==5)sound5.play(); }, this, 3, 3, 3); 
      button.name = name;
      button.anchor.setTo(0.5,0.5); 
-     button.scale.set(0.7, 0.7); 
+     button.scale.set(1, 1); 
      button.smoothed = true; 
-     button.alpha = 0.6;
+     button.alpha = 0.65;
  
  }
 
 function makePhaseButton(x, y, num) { 
  
-     var button = game.add.button(x, y, 'button', function(){phase_mode=num;}, this, 1, 2, 0); 
+     var button = game.add.button(x, y, 'button', function(){button.alpha=1; phase_mode=num;}, this, 1, 2, 0); 
      button.anchor.setTo(0.5,0.5); 
-     button.scale.set(0.5, 0.5); 
+     button.scale.set(0.9, 0.9); 
      button.smoothed = true; 
+     button.alpha = 0.65;
  
  } 

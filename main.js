@@ -1,23 +1,19 @@
-/*var game;
-var gameOptions = {
-    gameWidth: 800,
-    gameHeight: 600,
-    circleColors: [0xff0099, 0xf3f315, 0x83f52c, 0x630dd0],
-}
+/*
+var game;
+
  //	make game instance 
-game = new Phaser.Game(gameOptions.gameWidth, gameOptions.gameHeight, Phaser.AUTO, '');
+game = new Phaser.Game(800, 600, Phaser.AUTO, '');
    
  //	init game instance, add state 
 
 game.state.add('Game', Game); 
-game.state.add('GameTitle', gameTitle); 
-   
-game.state.start('GameTitle');  
+game.state.start('Game');  
 */
+
 var game;
 var gameOptions = {
-    gameWidth: 750,
-    gameHeight: 1334,
+    gameWidth: 1200,
+    gameHeight: 1000,
     circleColors: [0xff0099, 0xf3f315, 0x83f52c, 0x630dd0],
 }
 window.onload = function() {
@@ -61,8 +57,8 @@ gameTitle.prototype = {
         this.buttonBack = game.add.sprite(game.width / 2, game.height / 2 + 200, "playbutton");
         this.buttonBack.anchor.set(0.5);
         this.buttonBack.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
-        var playButton = game.add.button(game.width / 2, game.height / 2 + 200, "playbutton", function(){
-            game.state.start("GameTitle");
+        var playButton = game.add.button(game.width / 2, game.height / 2 + 200,"playbutton", function(){
+            game.state.start("Game");
         }, this);
         playButton.anchor.set(0.5);
         playButton.tint = Phaser.ArrayUtils.getRandomItem(gameOptions.circleColors);
